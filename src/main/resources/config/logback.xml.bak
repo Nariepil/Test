@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="false" scanPeriod="1 seconds" debug="true">
+	<property resource="logback.properties" />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{25} - %msg%n</pattern>
+			<immediateFlush>true</immediateFlush>
+		</encoder>
+	</appender>
+	<!-- file log -->
+	<appender name="fileRolling" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${dubbo.logback.file}</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${dubbo.logback.file}-%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
+			<maxHistory>${dubbo.logback.maxhistory}</maxHistory>
+			<TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>10MB</MaxFileSize>
+			</TimeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{25}:%L - %msg%n</pattern>
+			<immediateFlush>true</immediateFlush>
+		</encoder>
+	</appender>
+	<!-- default -->
+	<logger name="com.dongao" level="info" />
+  
+	<logger name="com.alibaba.dubbo.config.AbstractConfig" level="INFO" additivity="true"></logger>
+	<logger name="com.alibaba.dubbo.registry.zookeeper.ZookeeperRegistry" level="INFO" additivity="true"></logger>
+	<logger name="org.apache.zookeeper.ZooKeeper" level="OFF" additivity="true"></logger>
+	<logger name="org.apache.zookeeper.ClientCnxn" level="OFF" additivity="true"></logger>
+	<logger name="org.apache.commons.beanutils" level="OFF" additivity="true"></logger>
+	<logger name="org.springframework" level="INFO" additivity="true"></logger>
+
+	<logger name="org.springframework.data.redis.core.RedisConnectionUtils" level="OFF" additivity="true"></logger>
+
+	<logger name="druid.sql.DataSource" level="${dubbo.logback.level}" additivity="true"></logger>
+	<logger name="druid.sql.Connection" level="${dubbo.logback.level}" additivity="true"></logger>
+	<logger name="druid.sql.Statement" level="${dubbo.logback.level}" additivity="true"></logger>
+	<logger name="druid.sql.ResultSet" level="${dubbo.logback.level}" additivity="true"></logger>
+
+	<logger name="com.alibaba.dubbo.common.serialize.support.dubbo.Builder" level="OFF" additivity="true"></logger>
+<!-- 控制台打印sql，上线前可注释start -->  
+  <logger name="com.ibatis" level="DEBUG" />    
+  <logger name="com.ibatis.common.jdbc.SimpleDataSource" level="DEBUG" />    
+  <logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG" />    
+  <logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" level="DEBUG" />    
+  <logger name="java.sql.Connection" level="DEBUG" />    
+  <logger name="java.sql.Statement" level="DEBUG" />    
+  <logger name="java.sql.PreparedStatement" level="DEBUG" />  
+ <!-- 控制台打印sql，上线前可注释end -->
+	<root level="${dubbo.logback.level}">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="fileRolling" />
+	</root>
+</configuration>

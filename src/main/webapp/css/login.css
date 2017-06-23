@@ -1,0 +1,32 @@
+* {font-family: "Microsoft YaHei","SimSun", Verdana, Geneva, sans-serif;font-size: 12px;color: #626262;}
+body,h1,ul,li {margin: 0px;padding: 0px;}
+body{background:url(../images/loginbg2Box.jpg) no-repeat center top #fafafa;}
+ul{list-style:none;}
+a {color: #666;outline: none;text-decoration:none;}
+a:hover{text-decoration:underline;}
+.clear {width: 0px;height: 0px;line-height: 0px;margin: 0px;padding: 0px;font-size: 0px;font-weight: normal;clear: both;}
+.boxlogin {width:1000px;margin: 0px auto;background:url(../images/loginbg2.jpg) no-repeat; height:490px;padding-top:198px;}
+.boxlogin h1{width:560px;_width:520px;float:left;font-size:48px; color:#f18e1e; font-weight:bold; line-height:60px; text-align:center;padding-top:60px;}
+.boxlogin h1 b{display:block;font-size:40px; color:#f18e1e; font-weight:bold; line-height:60px; text-align:center;}
+.loginError{width:230px; height:35px; line-height:28px; text-align:center;padding:0 0 15px 120px;color:red;font-size:14px;}
+.loginError span,.boxlogin .btn{ background:url(../images/loginbg.gif) no-repeat;}
+.loginError span{ display:block;width:230px; height:35px;color:#f33300;}
+.boxlogin .txt{width:440px;height:470px; float:left;_float:right;}
+.boxlogin ul,.boxlogin li{width:440px;float:left;}
+.boxlogin li{height:70px;}
+.boxlogin label,.boxlogin .txt span,.boxlogin font,.boxlogin i,.boxlogin a,.boxlogin input{ display:block;float:left;}
+.boxlogin i{clear:both;background:#fbf8d6;line-height:22px; font-style:normal;color:#f33300;width:218px;padding-left:12px; /*display:none;*/}
+.boxlogin .yz i{width:110px;}
+.boxlogin font,.boxlogin a{padding:8px 0 8px 12px;line-height:32px; cursor:pointer;}
+.wh1,.wh2{line-height:18px;padding:13px 10px;font-size:14px;border:1px solid #d1d1d1; }
+.wh1{width:208px;}
+.wh2{ width:100px;}
+.txt span.Validform_checktip{_white-space:nowrap;}
+.boxlogin label{width:95px; text-align:right;color:#282828; padding-right:25px;font-size:16px;line-height:48px;}
+.boxlogin .btn {width:230px;height:45px;line-height:45px;font-size:20px;color:#fff;cursor:pointer;float:left;border:0px; background-position:0px -50px;margin:10px 0 0 120px;display:inline;}
+.boxlogin .btn:hover{ background-position:0px -100px;}
+.boxlogin .autoLogin{margin-left:120px;line-height:24px;cursor:pointer;}
+.boxlogin .autoLogin input{margin-top:5px;margin-top:2px\9;}
+.loginError span{/*display:none;*/}
+.boxlogin .footer{ text-align:center; line-height:20px;}
+.boxlogin .footer span{padding-right:120px;}

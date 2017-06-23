@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 
+     autogenerate V1.0 by dongao
+-->
+<mapper namespace="com.cy.modules.g_user.dao.GUserMapper">
+	<!-- 返回结果Map -->
+	<resultMap type="com.cy.modules.g_user.model.GUser" id="BaseResultMap">
+		<id property="id" column="id" javaType="java.lang.Long" jdbcType="BIGINT"/>
+		<result property="name" column="name" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="loginid" column="loginid" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="password" column="password" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="grade" column="grade" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+		<result property="isused" column="isused" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+		<result property="createUserId" column="create_user_id" javaType="java.lang.Long" jdbcType="BIGINT"/>
+		<result property="createUserName" column="create_user_name" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="createTime" column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+		<result property="updateUserId" column="update_user_id" javaType="java.lang.Long" jdbcType="BIGINT"/>
+		<result property="updateUserName" column="update_user_name" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="updateTime" column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+		<result property="deleteFlag" column="delete_flag" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+		<result property="orgCode" column="org_code" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	</resultMap>
+	<!--表名-->
+	<sql id="table_name">g_user</sql>
+	<!--查询字段集合-->
+	<sql id="Base_Column_List">
+	id,
+	name,
+	loginid,
+	password,
+	grade,
+	isused,
+	create_user_id,
+	create_user_name,
+	create_time,
+	update_user_id,
+	update_user_name,
+	update_time,
+	delete_flag,
+	org_code
+	</sql>
+	<!--查询字段-->
+	<sql id="Base_Column_List_asType">
+	id as "id",
+	name as "name",
+	loginid as "loginid",
+	password as "password",
+	grade as "grade",
+	isused as "isused",
+	create_user_id as "createUserId",
+	create_user_name as "createUserName",
+	create_time as "createTime",
+	update_user_id as "updateUserId",
+	update_user_name as "updateUserName",
+	update_time as "updateTime",
+	delete_flag as "deleteFlag",
+	org_code as "orgCode"
+	</sql>
+	<!-- 根据主键查询用户 -->
+	<select id="load" resultMap="BaseResultMap" parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		from <include refid="table_name" />
+		where id = #{id,jdbcType=BIGINT}
+	</select>
+	<!-- 根据条件查询用户（带分页） -->
+	<select id="selectByPage" resultMap="BaseResultMap" parameterType="com.cy.modules.g_user.model.GUser">
+		select
+		<include refid="Base_Column_List" />
+		from <include refid="table_name" />
+		where 1=1
+			<if test="name != null">
+			 and name=#{name,jdbcType=VARCHAR}
+			</if>
+			<if test="loginid != null">
+			 and loginid=#{loginid,jdbcType=VARCHAR}
+			</if>
+			<if test="password != null">
+			 and password=#{password,jdbcType=VARCHAR}
+			</if>
+			<if test="grade != null">
+			 and grade=#{grade,jdbcType=INTEGER}
+			</if>
+			<if test="isused != null">
+			 and isused=#{isused,jdbcType=INTEGER}
+			</if>
+			<if test="createUserId != null">
+			 and create_user_id=#{createUserId,jdbcType=BIGINT}
+			</if>
+			<if test="createUserName != null">
+			 and create_user_name=#{createUserName,jdbcType=VARCHAR}
+			</if>
+			<if test="createTime != null">
+			 and create_time=#{createTime,jdbcType=TIMESTAMP}
+			</if>
+			<if test="updateUserId != null">
+			 and update_user_id=#{updateUserId,jdbcType=BIGINT}
+			</if>
+			<if test="updateUserName != null">
+			 and update_user_name=#{updateUserName,jdbcType=VARCHAR}
+			</if>
+			<if test="updateTime != null">
+			 and update_time=#{updateTime,jdbcType=TIMESTAMP}
+			</if>
+			<if test="deleteFlag != null">
+			 and delete_flag=#{deleteFlag,jdbcType=INTEGER}
+			</if>
+			<if test="orgCode != null">
+			 and org_code=#{orgCode,jdbcType=VARCHAR}
+			</if>
+		order by id desc
+	</select>
+	<!-- 根据主键删除用户 -->
+	<delete id="delete" parameterType="java.lang.Long">
+		delete from <include refid="table_name" />
+		where id = #{id,jdbcType=BIGINT}
+  	</delete>
+	
+	<!-- 增加一个实体 -->
+	<insert id="insert" parameterType="com.cy.modules.g_user.model.GUser">
+		INSERT INTO <include refid="table_name" /> 
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="name != null">
+				name,
+			</if>
+			<if test="loginid != null">
+				loginid,
+			</if>
+			<if test="password != null">
+				password,
+			</if>
+			<if test="grade != null">
+				grade,
+			</if>
+			<if test="isused != null">
+				isused,
+			</if>
+			<if test="createUserId != null">
+				create_user_id,
+			</if>
+			<if test="createUserName != null">
+				create_user_name,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="updateUserId != null">
+				update_user_id,
+			</if>
+			<if test="updateUserName != null">
+				update_user_name,
+			</if>
+			<if test="updateTime != null">
+				update_time,
+			</if>
+			<if test="deleteFlag != null">
+				delete_flag,
+			</if>
+			<if test="orgCode != null">
+				org_code
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="name != null">
+				#{name},
+			</if>
+			<if test="loginid != null">
+				#{loginid},
+			</if>
+			<if test="password != null">
+				#{password},
+			</if>
+			<if test="grade != null">
+				#{grade},
+			</if>
+			<if test="isused != null">
+				#{isused},
+			</if>
+			<if test="createUserId != null">
+				#{createUserId},
+			</if>
+			<if test="createUserName != null">
+				#{createUserName},
+			</if>
+			<if test="createTime != null">
+				#{createTime},
+			</if>
+			<if test="updateUserId != null">
+				#{updateUserId},
+			</if>
+			<if test="updateUserName != null">
+				#{updateUserName},
+			</if>
+			<if test="updateTime != null">
+				#{updateTime},
+			</if>
+			<if test="deleteFlag != null">
+				#{deleteFlag},
+			</if>
+			<if test="orgCode != null">
+				#{orgCode}
+			</if>
+		</trim>
+		<selectKey keyProperty="id" resultType="long" order="AFTER">
+			SELECT LAST_INSERT_ID() 
+		</selectKey>
+	</insert>
+	<!-- 更新一个实体 -->
+	<update id="update" parameterType="com.cy.modules.g_user.model.GUser">
+		UPDATE <include refid="table_name" /> 
+		<set>
+			<if test="name != null">
+				name=#{name},
+			</if>
+			<if test="loginid != null">
+				loginid=#{loginid},
+			</if>
+			<if test="password != null">
+				password=#{password},
+			</if>
+			<if test="grade != null">
+				grade=#{grade},
+			</if>
+			<if test="isused != null">
+				isused=#{isused},
+			</if>
+			<if test="createUserId != null">
+				create_user_id=#{createUserId},
+			</if>
+			<if test="createUserName != null">
+				create_user_name=#{createUserName},
+			</if>
+			<if test="createTime != null">
+				create_time=#{createTime},
+			</if>
+			<if test="updateUserId != null">
+				update_user_id=#{updateUserId},
+			</if>
+			<if test="updateUserName != null">
+				update_user_name=#{updateUserName},
+			</if>
+			<if test="updateTime != null">
+				update_time=#{updateTime},
+			</if>
+			<if test="deleteFlag != null">
+				delete_flag=#{deleteFlag},
+			</if>
+			<if test="orgCode != null">
+				org_code=#{orgCode}
+			</if>
+		</set>
+		WHERE id =#{id}  
+	</update>
+	<select id="findUserByOrgCode"  resultMap="BaseResultMap" parameterType="java.lang.String">
+		SELECT 	<include refid="Base_Column_List" />
+		from <include refid="table_name" />
+		where org_code = #{orgCode,jdbcType=VARCHAR}
+	</select>	
+	<!-- 查询全部 -->
+	<select id="selectAll"  resultMap="BaseResultMap">
+		SELECT * FROM <include refid="table_name" /> where 1=1
+	</select>
+  	<!-- 统计全部 -->
+	<select id="countAll"  resultType="int">
+		SELECT count(1) FROM <include refid="table_name" /> where 1=1
+	</select>
+	<!--Notice:$要自己保证入参合法性，以防止sql注入-->
+	<!--common:入参 sql 出参：map-->
+	<select id="commonSelectBySql" resultMap="BaseResultMap" parameterType="com.cy.beans.CommonDto">
+		${sql}
+	</select>  
+	<select id="commonCountBySql" resultType="int" parameterType="com.cy.beans.CommonDto">
+		${sql}
+	</select>
+	<select id="commonBySqlPage" resultMap="BaseResultMap" parameterType="com.cy.beans.CommonDto">
+		${sql}
+	</select> 	
+	
+	<select id="loginCodeUniqueValid"  resultType="int" >
+		SELECT 	count(1)
+		from <include refid="table_name" />
+		where (name = #{name,jdbcType=VARCHAR} or loginid = #{name,jdbcType=VARCHAR}) 
+		<if test="idStr != null">
+			and id != #{idStr,jdbcType=VARCHAR}
+		</if>
+	</select>	
+	<select id="login"  resultMap="BaseResultMap">
+		SELECT 	<include refid="Base_Column_List" />
+		from <include refid="table_name" />
+		where (name = #{name,jdbcType=VARCHAR} or loginid = #{name,jdbcType=VARCHAR}) and password = #{password,jdbcType=VARCHAR}
+	</select> 	
+	<update id="enableUser" parameterType="java.lang.Long">
+		UPDATE <include refid="table_name"/> set isused= 1 where id = #{id,jdbcType=BIGINT}	
+	</update>
+	<select id="getCurrentSeqId" parameterType="java.lang.String" resultType="java.lang.Long">
+		SELECT nextsequence ('current')
+	</select>
+	
+</mapper>
+	 

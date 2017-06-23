@@ -1,0 +1,20 @@
+# dubbo config
+dubbo.application.name=cy_admin
+dubbo.application.owner=lipr
+dubbo.application.logger=slf4j
+#local
+#dubbo.registry.address=zookeeper://127.0.0.1:2181
+#test
+#dubbo.registry.address=zookeeper://192.168.21.14:2181
+#online
+#dubbo.registry.address=zookeeper://172.17.10.119:2181
+
+#dubbo.registry.register=true
+#dubbo.registry.file=../temp/dubbo-registry.cache
+
+# logback	
+dubbo.container=spring,logback
+dubbo.logback.file=/log/tomcat/da_reacc_admin/da_reacc_admin.error.log
+dubbo.logback.level=info
+dubbo.logback.maxhistory=10
+

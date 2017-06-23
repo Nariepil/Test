@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 
+     autogenerate V1.0 by dongao
+-->
+<mapper namespace="com.cy.modules.g_right.dao.GRightMapper">
+	<!-- 返回结果Map -->
+	<resultMap type="com.cy.modules.g_right.model.GRight" id="BaseResultMap">
+		<id property="id" column="id" javaType="java.lang.Long" jdbcType="BIGINT"/>
+		<result property="code" column="code" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="name" column="name" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="parentid" column="parentid" javaType="java.lang.Long" jdbcType="BIGINT"/>
+		<result property="isleaf" column="isleaf" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+		<result property="buttonId" column="button_id" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="projectId" column="project_id" javaType="java.lang.Long" jdbcType="BIGINT"/>
+		<result property="menuurl" column="menuurl" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result property="type" column="type" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+		<result property="sequence" column="sequence" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+	</resultMap>
+	<!--表名-->
+	<sql id="table_name">g_right</sql>
+	<!--查询字段集合-->
+	<sql id="Base_Column_List">
+	id,
+	code,
+	name,
+	parentid,
+	isleaf,
+	button_id,
+	project_id,
+	menuurl,
+	type,
+	sequence
+	</sql>
+	<!--查询字段-->
+	<sql id="Base_Column_List_asType">
+	id as "id",
+	code as "code",
+	name as "name",
+	parentid as "parentid",
+	isleaf as "isleaf",
+	button_id as "buttonId",
+	project_id as "projectId",
+	menuurl as "menuurl",
+	type as "type",
+	sequence as "sequence"
+	</sql>
+	<!-- 根据主键查询用户 -->
+	<select id="load" resultMap="BaseResultMap" parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		from <include refid="table_name" />
+		where id = #{id,jdbcType=BIGINT}
+	</select>
+	<!-- 根据条件查询用户（带分页） -->
+	<select id="selectByPage" resultMap="BaseResultMap" parameterType="com.cy.modules.g_right.model.GRight">
+		select
+		<include refid="Base_Column_List" />
+		from <include refid="table_name" />
+		where 1=1
+			<if test="code != null">
+			 and code=#{code,jdbcType=VARCHAR}
+			</if>
+			<if test="name != null">
+			 and name=#{name,jdbcType=VARCHAR}
+			</if>
+			<if test="parentid != null">
+			 and parentid=#{parentid,jdbcType=BIGINT}
+			</if>
+			<if test="isleaf != null">
+			 and isleaf=#{isleaf,jdbcType=INTEGER}
+			</if>
+			<if test="buttonId != null">
+			 and button_id=#{buttonId,jdbcType=VARCHAR}
+			</if>
+			<if test="projectId != null">
+			 and project_id=#{projectId,jdbcType=BIGINT}
+			</if>
+			<if test="menuurl != null">
+			 and menuurl=#{menuurl,jdbcType=VARCHAR}
+			</if>
+			<if test="type != null">
+			 and type=#{type,jdbcType=INTEGER}
+			</if>
+			<if test="sequence != null">
+			 and sequence=#{sequence,jdbcType=INTEGER}
+			</if>
+		order by id desc
+	</select>
+	<!-- 根据条件查询用户（不带分页） -->
+	<select id="findByObj" resultMap="BaseResultMap" parameterType="com.cy.modules.g_right.model.GRight">
+		select
+		<include refid="Base_Column_List" />
+		from <include refid="table_name" />
+		where 1=1
+			<if test="code != null">
+			 and code=#{code,jdbcType=VARCHAR}
+			</if>
+			<if test="name != null">
+			 and name=#{name,jdbcType=VARCHAR}
+			</if>
+			<if test="parentid != null">
+			 and parentid=#{parentid,jdbcType=BIGINT}
+			</if>
+			<if test="isleaf != null">
+			 and isleaf=#{isleaf,jdbcType=INTEGER}
+			</if>
+			<if test="buttonId != null">
+			 and button_id=#{buttonId,jdbcType=VARCHAR}
+			</if>
+			<if test="projectId != null">
+			 and project_id=#{projectId,jdbcType=BIGINT}
+			</if>
+			<if test="menuurl != null">
+			 and menuurl=#{menuurl,jdbcType=VARCHAR}
+			</if>
+			<if test="type != null">
+			 and type=#{type,jdbcType=INTEGER}
+			</if>
+			<if test="sequence != null">
+			 and sequence=#{sequence,jdbcType=INTEGER}
+			</if>
+		order by id desc
+	</select>
+	<!-- 根据主键删除用户 -->
+	<delete id="delete" parameterType="java.lang.Long">
+		delete from <include refid="table_name" />
+		where id = #{id,jdbcType=BIGINT}
+  	</delete>
+	
+	<!-- 增加一个实体 -->
+	<insert id="insert" parameterType="com.cy.modules.g_right.model.GRight">
+		INSERT INTO <include refid="table_name" /> 
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="code != null">
+				code,
+			</if>
+			<if test="name != null">
+				name,
+			</if>
+			<if test="parentid != null">
+				parentid,
+			</if>
+			<if test="isleaf != null">
+				isleaf,
+			</if>
+			<if test="buttonId != null">
+				button_id,
+			</if>
+			<if test="projectId != null">
+				project_id,
+			</if>
+			<if test="menuurl != null">
+				menuurl,
+			</if>
+			<if test="type != null">
+				type,
+			</if>
+			<if test="sequence != null">
+				sequence
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="code != null">
+				#{code},
+			</if>
+			<if test="name != null">
+				#{name},
+			</if>
+			<if test="parentid != null">
+				#{parentid},
+			</if>
+			<if test="isleaf != null">
+				#{isleaf},
+			</if>
+			<if test="buttonId != null">
+				#{buttonId},
+			</if>
+			<if test="projectId != null">
+				#{projectId},
+			</if>
+			<if test="menuurl != null">
+				#{menuurl},
+			</if>
+			<if test="type != null">
+				#{type},
+			</if>
+			<if test="sequence != null">
+				#{sequence}
+			</if>
+		</trim>
+		<selectKey keyProperty="id" resultType="long" order="AFTER">
+			SELECT LAST_INSERT_ID() 
+		</selectKey>
+	</insert>
+	<!-- 更新一个实体 -->
+	<update id="update" parameterType="com.cy.modules.g_right.model.GRight">
+		UPDATE <include refid="table_name" /> 
+		<set>
+			<if test="code != null">
+				code=#{code},
+			</if>
+			<if test="name != null">
+				name=#{name},
+			</if>
+			<if test="parentid != null">
+				parentid=#{parentid},
+			</if>
+			<if test="isleaf != null">
+				isleaf=#{isleaf},
+			</if>
+			<if test="buttonId != null">
+				button_id=#{buttonId},
+			</if>
+			<if test="projectId != null">
+				project_id=#{projectId},
+			</if>
+			<if test="menuurl != null">
+				menuurl=#{menuurl},
+			</if>
+			<if test="type != null">
+				type=#{type},
+			</if>
+			<if test="sequence != null">
+				sequence=#{sequence}
+			</if>
+		</set>
+		WHERE id =#{id}  
+	</update>
+	<!-- 查询全部 -->
+	<select id="selectAll"  resultMap="BaseResultMap">
+		SELECT * FROM <include refid="table_name" /> where 1=1
+	</select>
+  	<!-- 统计全部 -->
+	<select id="countAll"  resultType="int">
+		SELECT count(1) FROM <include refid="table_name" /> where 1=1
+	</select>
+	<!--Notice:$要自己保证入参合法性，以防止sql注入-->
+	<!--common:入参 sql 出参：map-->
+	<select id="commonSelectBySql" resultMap="BaseResultMap" parameterType="com.cy.beans.CommonDto">
+		${sql}
+	</select>  
+	<select id="commonCountBySql" resultType="int" parameterType="com.cy.beans.CommonDto">
+		${sql}
+	</select>
+	<select id="commonBySqlPage" resultMap="BaseResultMap" parameterType="com.cy.beans.CommonDto">
+		${sql}
+	</select> 	
+	<!-- 根据条件查询用户（不带分页） -->
+	<select id="selectByEntity" resultMap="BaseResultMap" parameterType="com.cy.modules.g_right.model.GRight">
+		select
+		<include refid="Base_Column_List" />
+		from <include refid="table_name" />
+		where 1=1
+			<if test="code != null">
+			 and code=#{code,jdbcType=VARCHAR}
+			</if>
+			<if test="name != null">
+			 and name=#{name,jdbcType=VARCHAR}
+			</if>
+			<if test="parentid != null">
+			 and parentid=#{parentid,jdbcType=BIGINT}
+			</if>
+			<if test="isleaf != null">
+			 and isleaf=#{isleaf,jdbcType=INTEGER}
+			</if>
+			<if test="buttonId != null">
+			 and button_id=#{buttonId,jdbcType=VARCHAR}
+			</if>
+			<if test="projectId != null">
+			 and project_id=#{projectId,jdbcType=BIGINT}
+			</if>
+			<if test="menuurl != null">
+			 and menuurl=#{menuurl,jdbcType=VARCHAR}
+			</if>
+			<if test="type != null">
+			 and type=#{type,jdbcType=INTEGER}
+			</if>
+			<if test="sequence != null">
+			 and sequence=#{sequence,jdbcType=INTEGER}
+			</if>
+		order by sequence asc
+	</select>
+	<select id="selectAllHead" resultMap="BaseResultMap">
+		select * from <include refid="table_name" /> where isleaf = 0 order by sequence asc;
+	</select> 	
+	<select id="selectUserMenuHead" resultMap="BaseResultMap">
+		select r.* from g_userright ur , g_right r where 
+		ur.user_id=#{userId,jdbcType=BIGINT} and ur.right_id = r.id and r.parentid = 0  and r.type=0 order by r.sequence asc;
+	</select> 	
+	<select id="selectUserMenuLeaf" resultMap="BaseResultMap">
+		select r.* from g_userright ur , g_right r where 
+		ur.user_id=#{userId,jdbcType=BIGINT}  and ur.right_id = r.id  and r.type=0
+		and r.parentid = #{headId,jdbcType=BIGINT}   order by r.sequence asc; 
+	</select> 	
+	<select id="selectUserMenuAll" resultMap="BaseResultMap" parameterType="com.cy.modules.g_user.model.GUser">
+		select r.* from g_userright ur , g_right r where 
+		ur.user_id=#{id} 
+		<if test="grade == 0">
+			and r.id != 84
+		</if>
+		and ur.right_id = r.id and r.menuurl is not null and r.menuurl != '' and r.type=0 and r.isleaf=1 order by r.sequence asc; 
+	</select> 	
+	<select id="selectUserRightAll" resultMap="BaseResultMap" parameterType="com.cy.modules.g_user.model.GUser">
+		select r.* from g_userright ur , g_right r where 
+		ur.user_id=#{id} 
+		<if test="grade == 0">
+			and r.id != 84
+		</if>
+		and ur.right_id = r.id and r.menuurl is not null and r.menuurl != '' order by r.sequence asc; 
+	</select> 	
+	<select id="selectUserDisabledButton" resultMap="BaseResultMap">
+		select r.* from g_right r where r.type=1 and r.id not in(select ur.right_id from g_userright ur where ur.user_id = #{userId,jdbcType=BIGINT} ) and r.parentid in (
+		select r1.id from g_userright ur1 , g_right r1 where ur1.user_id=#{userId,jdbcType=BIGINT} and ur1.right_id = r1.id and r1.type=0 and r1.isleaf=1 
+		);
+	</select> 	
+	<select id="selectUserDisabledRight" resultMap="BaseResultMap">
+		select r.* from g_right r where r.type=1 and r.id not in (select ur.right_id from g_userright ur where ur.user_id = #{userId,jdbcType=BIGINT} ) ;
+	</select> 	
+	<select id="selectAllByProjectId"  resultMap="BaseResultMap">
+		SELECT * FROM <include refid="table_name" /> where 1=1
+		<if test="projectId != null">
+			and project_id = #{projectId,jdbcType=BIGINT}
+		</if>
+		<if test="projectId == null">
+			and (project_id ='' or  project_id is null)
+		</if>
+		order by sequence asc
+	</select>
+	<select id="findChildren" resultMap="BaseResultMap">
+		select * from g_right where parentid=#{parentId,jdbcType=BIGINT}
+		<if test="type != null">
+			and type=#{type,jdbcType=INTEGER}
+		</if>
+		 order by sequence asc
+	</select> 	
+	<select id="countByCode"  resultType="int">
+		select count(1) from g_right where code like CONCAT(#{code,jdbcType=VARCHAR},'%');
+	</select> 
+	<select id="getMaxSequence" resultType="int" parameterType="java.lang.Long">
+  		select max(sequence) from g_right where parentid = #{pId,jdbcType=BIGINT};
+	</select>
+			<!-- 根据code删除及其子树 -->
+	<delete id="deleteByCode" parameterType="java.lang.String">
+		delete from <include refid="table_name" />
+		where code like CONCAT(#{code,jdbcType=VARCHAR},'%');
+  	</delete>
+  	<!-- 根据父节点查询所有子节点 -->
+  	<select id="getAllNodes" parameterType="java.lang.Long" resultType="String">
+  		SELECT queryChildren (#{parentId,jdbcType=BIGINT})
+  	</select>
+</mapper>
+	 

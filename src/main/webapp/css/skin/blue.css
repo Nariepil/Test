@@ -1,0 +1,174 @@
+@charset "utf-8";
+/*顶部*/
+.top{border-bottom:3px solid #34B8DF;}
+.logo{background:url(../../images/toplogo.png) no-repeat -3px 0px;}
+.func a{background-image:url(../../images/2.png);background-repeat:no-repeat;}
+.func a.first{background-position:-364px -46px;}
+.func a.second{background-position:-134px -45px;}
+.func a.third{background-position:-180px -44px;}
+.func a.last{background-position:-220px -45px;}
+#menu li a:hover,#menu li a.sel{background:url(../../images/2.png) no-repeat -5px -47px;color:#FFF;}
+/*左侧*/
+#sideCont dd a{background-color:#34B8DF;}
+#sideCont dd a:hover,#sideCont dd a.select{background-color:#1C8DAE;color:#FFF;}
+#sideCont i.sel{background:url(../../images/2.png) no-repeat -108px -50px;}
+/*右侧*/
+.position{background:url(../../images/2.png) no-repeat -376px -41px;}
+/*底部*/
+#btm{background:#34B8DF;}
+
+/*主页面*/
+.word{border:1px solid #34B8DF;}
+.gray{float:none;border:1px solid #ccc;}
+.nofloat{float:none;}
+.shortTxt{width:26px;text-align:center;float:left;}
+.word i,.search_btn,.reset_btn{background-color:#34B8DF;}
+.cword i{background-color:#D2D2D2;}
+.over{border-color:#34B8DF;}
+.over i{background-color:#34B8DF;}
+
+/*分页*/
+.page a.sel,.page a:hover{color:#34B8DF;}
+.page a.prev,.page a.next{background-image:url(../../images/2.png);}
+.page a.prev{background-position:-316px -53px;}
+.page a.next{background-position:-266px -53px;}
+.page a.pnone,.page a.nnone{background-image:url(../../images/icons.png);background-repeat:no-repeat;}
+.page a.pnone{background-position:-7px -402px;}
+.page a.nnone{background-position:-7px -432px;}
+
+/*弹窗*/
+.box_title{background:#34B8DF;}
+.btn{background:#34B8DF;margin-left:5px;}
+.dis{background:#999;margin-left:10px;}
+.lbtn{margin-left:50px;}
+.bg td{background:#E1F5FB;border-bottom:1px dotted #ddd;padding-top:8px;padding-bottom:8px;}
+.nobr td{border-bottom:none;padding-bottom:3px;}
+.nopt td{padding-top:3px;}
+.bc_cont li:hover{color:#34B8DF;}
+
+/*内容*/
+.content_title{border-top:1px solid #34B8DF;height:36px;background:#F7EBDD;font-size:16px;font-weight:bold;line-height:36px;padding-left:15px;color:#34B8DF;}
+.stcskin{color:#34B8DF}
+.stcskin span {
+    background: none repeat scroll 0 0 #34B8DF;
+}
+/*修改支付银行*/
+.datable a:hover{color:#34B8DF;}
+
+/*银行组合*/
+.addbtn{width:50px;margin-left:110px;}
+.okbtn{margin-left:100px;}
+
+/*选项卡切换*/
+.tab{height:30px;line-height:30px;border-bottom:1px solid #34B8DF;}
+.tab a:hover,.tab a.sel{background:#34B8DF;}
+
+/*文字颜色*/
+.act{color:#34B8DF;}
+
+.mt10{margin-top:10px;margin-left:0px;}
+.mart10{margin-top:10px;}
+.setp_title{font-size:14px;color:#34B8DF;margin-top:10px;}
+.smiddle1{background:url(../../images/2.png) no-repeat 0px -77px;}
+.smiddle2_ok{background:url(../../images/2.png) no-repeat 0px -107px;}
+.smiddle3_ok{background:url(../../images/2.png) no-repeat 0px -138px;}
+.smiddle33_ok{background:url(../../images/2.png) no-repeat 0px -173px;}
+.btn_Right{float:right;width:100px;}
+
+.selectBg{background:#FFF8E6;}
+
+.stepsCont div.curr{background:#34B8DF;}
+.stepsCont div.curr i{background-position:-12px 0px;}
+.stepsCont div.curr i.ilast{background-position:-36px 0px;}
+
+.tree_ctrl i{background:url(../../images/2.png) no-repeat -109px -50px;}
+.tree_ul a:hover,.tree_ul a.sel{color:#34B8DF;}
+
+.orgTitle{border-bottom:1px solid #34B8DF;}
+.ucount a,.ucount span{color:#34B8DF;}
+.tpbg a{margin-left:15px;color:#34B8DF;}
+.more{background:#34B8DF;}
+.ctrlStep a.cp{border:1px solid #34B8DF;color:#34B8DF;}
+.bn0{margin:15px 0px 0px 35px;}
+
+#Validform_msg .Validform_title {background: #34B8DF;}
+
+
+
+#nqtb .bc {
+	background: #34B8DF;
+	color: #fff;
+}
+.sjgl td  input.userbtn {
+	background: #fff;
+	border-radius: 4px;
+	border: 1px solid #34b8df;
+	width: 100px;
+	line-height: 25px;
+	height: 25px;
+	border: 0;
+	color: #34B8DF;
+	margin-right: 10px;
+	cursor: pointer;
+	border: 1px solid #34b8df;
+}
+#nqtb .zj {
+	display: inline-block;
+	background: #fff;
+	text-align: center;
+	width: 100px;
+	height: 25px;
+	line-height: 25px;
+	color: #34b8df;
+	border-radius: 4px;
+	border: 1px solid #34b8df;
+}
+
+
+/*JBox*/
+*:focus {outline: none;}
+/* fade */
+.jbox-fade{background-color:#000000;}
+/* drag */
+.jbox-drag{border:1px dashed #febb05;}
+/* jbox */
+div.jbox {padding:0px;border:none;font-size:12px;}
+/* border */
+div.jbox .jbox-border{background: none repeat scroll 0 0 #000000;filter:alpha(opacity=20);-moz-opacity:0.2;opacity:0.2;}
+/* container */
+div.jbox .jbox-container{background-color:#ffffff;border:1px solid #999999;}
+/* title-panel */
+div.jbox .jbox-title-panel{background: #34B8DF;border-bottom:1px solid #999999;}
+div.jbox .jbox-title{font-weight:bold;color:#ffffff;}
+div.jbox .jbox-title-icon{background:url(../../images/jbox/orange/jbox-title-icon.gif) no-repeat scroll 3px 5px transparent;}
+div.jbox .jbox-close,div.jbox .jbox-close-hover{background:url(../../images/jbox/orange/jbox-close1.gif) no-repeat scroll 0px 0px transparent;}
+div.jbox .jbox-close-hover{background-position:-16px 0;}
+/* content */
+div.jbox .jbox-content{min-height:24px;line-height:28px;color:#444444;}
+div.jbox .jbox-content-loading{background-color:#E6E6E6;}
+div.jbox .jbox-content-loading-image{background:url(../../images/jbox/orange/jbox-content-loading.gif) no-repeat bottom center;}
+/* button-panel */
+div.jbox .jbox-button-panel{}
+div.jbox .jbox-bottom-text{text-indent:10px;color:#444444;}
+div.jbox .jbox-button{background: #34B8DF;border: none;color:#fff;border-radius:3px 3px 3px 3px;margin:1px 7px 0px 0px;height:22px;width:79px;cursor:pointer;}
+div.jbox .jbox-button-hover{}
+div.jbox .jbox-button-active{}
+div.jbox-warning .jbox .jbox-button-panel{background-color: #FFFFFF;}
+/* tip-color */
+div.jbox .jbox-tip-color{background: #34B8DF;border-color:#1C8DAE;border-radius:3px 3px 3px 3px;color:#fff;}
+/* icons */
+div.jbox span.jbox-icon{background:url(../../images/jbox/orange/jbox-icons.png) no-repeat scroll 0 0 transparent;margin-top:19px;margin-left:16px;}
+div.jbox span.jbox-icon-info {background-position:0 0;}
+div.jbox span.jbox-icon-question {background-position:-36px 0;}
+div.jbox span.jbox-icon-success {background-position:-72px 0;}
+div.jbox span.jbox-icon-warning {background-position:-108px 0;}
+div.jbox span.jbox-icon-error {background-position:-144px 0;}
+div.jbox span.jbox-icon-none {display: none; overflow:hidden;}
+div.jbox span.jbox-icon-loading {background:url(../../images/jbox/orange/jbox-loading1.gif) no-repeat scroll 0 0 transparent;}
+
+
+
+#tkxt .tab_box { clear:both; border:1px solid #34b8df;}
+#tkxt .tab_menu li { float:left; text-align:center; cursor:pointer;border-radius: 4px 4px 0 0;border: 1px solid #34b8df; list-style:none; /* padding:1px 6px */;width:92px;height:28px;line-height:28px; margin-right:4px; background:#fff;  border-bottom:none;}
+#tkxt .tab_menu li.hover { /* background:#fff; */}
+#tkxt .tab_menu li.selected { color:#FFF; background:#34b8df;}

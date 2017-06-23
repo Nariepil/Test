@@ -1,0 +1,84 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>404</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <style>
+    body{
+        background: #fff !important;
+        font-family: "PingFang", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .btime-404{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 100;
+        width: 474px;
+        height: 384px;
+        margin-top: -192px;
+        margin-left: -237px;
+        text-align: center;
+    }
+
+    .btime-404 .bg{
+        display: block;
+        width: 554px;
+        height: 300px;
+        margin-bottom: 18px;
+        background: url('../images/404.png') no-repeat 0 0;
+    }
+
+    .btime-404 .title{
+        margin-bottom: 16px;
+        color: #333;
+        font-size: 24px;
+    }
+
+    .btime-404 .info{
+        color: #999;
+        font-size: 14px;
+    }
+
+    .btime-404 .info strong{
+        margin: 0 6px;
+        color: #e1413e;
+        font-size: 14px;
+        font-family: arial;
+    }
+    </style>
+    
+</head>
+
+<body>
+
+    <div class="btime-404">
+        <i class="bg"></i>
+        <h2 class="title">哎呀！出错啦！</h2>
+        <p class="info">您要访问的页面不存在... <strong>5</strong>秒后为您返回页面</p>
+    </div>
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+    $(function() {
+
+        var box = $('.btime-404 strong'),
+            i = 5;
+        box.html(i);
+
+        function count_down() {
+            if (i < 1) {
+                //window.location.href = "http://www.baidu.com";
+                i = 5;
+            } else {
+                box.html(i);
+                i--;
+            }
+        }
+        count_down();
+        setInterval(count_down, 1000);
+    });
+    </script>
+</body></html>
