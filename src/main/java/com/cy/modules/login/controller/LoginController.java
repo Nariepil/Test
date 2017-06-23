@@ -63,7 +63,7 @@ public class LoginController {
     		GUser gUser2 = gUserService.login(username,password);
     		if(gUser2 == null){
     			rm.setFlag("false");
-    			rm.setMessage("用户名密码有误！");
+    			rm.setMessage("用户名密码有误！"); 
     			return rm;
     		}/*else 
     			if(gUser2.getLockIp()!=null && !gUser2.getLockIp().equals(addIp)){
